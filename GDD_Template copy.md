@@ -257,26 +257,31 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 _(example)_
 
-Class Player
-    id
-    name
-    password
-    list of cards
+1. Class Player 
+   *  id
+   *  name
+   *  password
+   *  list of cards
 
-Class Card
-    id
-    name
-    hp
-    ap
-    cost
-    type
-    element
-    strength
-    weakness
 
-Class Deck
-    list of cards
-    size
+
+2. Class Card
+   *  id
+   *  name
+   *  health
+   *  attack
+   *  cost
+   *  type
+   *  element
+   *  strength
+   *  weakness
+
+
+
+3. Class Deck 
+   *  list of cards
+   * size
+
 
 
 ### **Derived Classes / Component Compositions**
