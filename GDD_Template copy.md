@@ -257,6 +257,28 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 _(example)_
 
+Class Player
+    id
+    name
+    password
+    list of cards
+
+Class Card
+    id
+    name
+    hp
+    ap
+    cost
+    type
+    element
+    strength
+    weakness
+
+Class Deck
+    list of cards
+    size
+
+
 ### **Derived Classes / Component Compositions**
 
 1. BasePlayer
