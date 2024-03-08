@@ -158,6 +158,51 @@ How will the player interact with the game? Will they be able to choose the cont
 
 ### **Mechanics**
 
+Elixir:
+
+Elixir is gained depending on the HP of the card played, where 100-80% gives 2 EP, 80-50% 3 EP and less than 50% gives 4 EP each turn.
+
+TBD- If you run out of elixir you can sacrifice any card to gain half of their elixir cost
+
+Cards:
+There will be 3 types of troop cards and spell cards:
+The troop cards are divided into Fire, Plant and Water. Each having their special carateristics, Fire will have low elixir cost and high AP, however all of them will have equally low HP. Grass cards will have a low amount of AP however it will have a hig amount of damage. Water type cards on the other hand will be high elixir cost but having DP.
+
+**Example cards:**
+
+Fire:
+Flambits- 10 HP 6 AP 2 EP
+Daemon- 16 HP 8 AP 3 EP
+Bombwhisk- 13 HP 9 AP 5 EP
+Horseman- 17 HP 3 DP 10 AP 6 EP
+Pack of Fire Tigers- 20 HP 8 AP 6 EP
+Dragon- 23 HP 14 AP 6 EP
+
+Grass:
+Corocs- 15 HP 5 AP 2 EP
+Wood Man- 24 HP 6 AP 4 EP
+Herb- 20 HP 8 AP 6 EP
+Toad Stool- 28 HP 8 AP 6 EP
+Grasshoppers- 34 HP 5 AP 7 EP
+Parapara- 30 HP 8 AP 7 EP
+
+Water:
+Drop- 13 HP 4 AP 3 EP
+Drowned- 15 HP 5 DP 6 AP 6 EP
+CrabTank- 10 HP 15 DP 6 AP 7 EP
+Puffer- 18 HP 3 DP 8 AP 7 EP
+Reef- 12 HP 18 DP 6 AP 8 EP
+Kraken- 18 HP 13 DP 8AP 9 EP
+
+Spells:
+
+Defense up: Increces 5 DP to a card 3 EP
+Health up: Increces 10 HP to a card 3 EP
+Snow Storm: Reduces 60% of AP in a turn 6 EP
+Quick Sand: Stuns a card for one turn 5 EP
+Root Beer: Increses AP to card 5 EP
+Neutral: Change a card's element to neutral 4 EP
+
 Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
 
 ## _Level Design_
@@ -172,40 +217,30 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
     1. Mood
         1. Dark, calm, foreboding
     2. Objects
-        1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
-        2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
+        1. _NCP_
+            1. Normal mage
+        2. _Deck_
+            It contains maily fire type cards with few spells  
+2. Castle (Final boss)
     1. Mood
         1. Dangerous, tense, active
     2. Objects
-        1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
-        2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+        1. _NPC_
+            1. Dark mage
+        2. _Deck_
+            Deck balanced with each type of element, always ready
 
-_(example)_
 
 ### **Game Flow**
 
-1. Player starts in forest
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
-7. … etc.
+1. Player starts choosing level, with a 10-15 (tbd) card deck
+2. Player starts with 6 elixir point and 5 cards
+3. Player chooses a troop card and has the option to choose a spell card
+4. The npc always attacks first and then the player's card, applying the spell at the begining
+5. At the end of every turn each player recives an amount of elixir that depends on the card's health reciving a minimum of 2 elixir
+6. If the player doesn't have a troop card in hand, a card will need to be "sacrificed" and put into de discard section
+7. The game ends until a player runs out of cards
 
-_(example)_
 
 ## _Development_
 
