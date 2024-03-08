@@ -70,12 +70,14 @@ If a card is stronger than the card it's up against, the damage inflicted by one
 
 Every time a card in the player's hand is used, another from their deck fills the vacancy left by said card.
     
-In order to fuel their magical movements (the use of different cards and attacking with active cards), both players will require certain amounts of a magical energy that has not yet been named, though the preliminary term in use is "Elixir". Elixir is won each turn as a function of the damage inflicted upon enemy troops. This is to say, the more damage a player does to their opponent, the more Elixir they will gain to fuel subsequent attacks. If a player inflicts no damage during a turn, they will gain no Elixir.
+In order to fuel their magical movements (the use of different cards and attacking with active cards), both players will require certain amounts of a magical energy that has not yet been named, though the preliminary term in use is "Elixir". Elixir is won each turn,in a regular basis,but, the elixir can also be won as a function of the health points of the troop card that is in play. This is to say, the more damage a troop has, the more Elixir they will gain to fuel subsequent attacks.Let's clarify this "mechanic" some more, if we (the player), have a card on the field, and that card has 80 base health points, but the enemy inflicts a certain amount of damage, our card now has a certain percentage of life depending on its health points, this, by default, triggering the event of duplicating the elixir won each round the card is in the battlefield.The percentage from which the duplicating elixir will trigger, is still to be determined later on.
+
+In order to let the player know the effect has started, we plan to implement a certain type of UI effect, this could be a message, and alert, or even a glow around the card in the field.
+
 
 To win, a player must defeat all of his opponent's cards before one of the following scenarios takes place: 
 
-    1. The player runs out of Elixir due to a lack of damage inflicted.
-    2. The player runs out of cards in his deck before defeating all of his opponent's cards.
+    1. The player runs out of cards in his deck before defeating all of his opponent's cards.
 
 If the player manages to defeat his opponent, the match will come to an end and the wizard will be able to collect a reward from his fallen adversary. The lackey's cards will be set face down on a black screen and the player will have to decide which card to keep. Once they select one, it will be revealed and added to their inventory. 
 
@@ -142,68 +144,139 @@ In order to progressively increase the difficulty level, each opponent's cards w
 
 ### **Screens**
 
-1. Title Screen
-    1. Options
-2. Level Select
-3. Game
-    1. Inventory
-    2. Assessment / Next Level
-4. End Credits
+During the course of our game, various screens will be shown, each will contain certain information regarding to said screen, this screens will be the following:
+#### 1. Title Screen
 
-_(example)_
+The first screen that will be shown in our game, is the title screen, which will feature "Start","Deck","Credits" buttons, which, if clicked, will take you to the next screen, this screen will look something like this:
+
+![Local Image](Title_screen1.png)
+  
+
+#### 2. Start
+The start screen will have a screen with the level selection, so far, we have decided to only design two levels, which will be mandtory to complete the previous level in order to access the next one.
+
+#### 3. Level Select
+
+The level selection screen will feature all the levels that our game has, but the player will only be able to enter into the ones that he has completed, he can't enter a level if the previous one hasn't been cleared.
+
+#### 4. Battle
+
+After selecting the level, the game will take you to the battling field, this is where the duel will take place, so far we haven't determined what the field will look like in terms of images and effects, but, a rough idea would be something like this:
+
+![Local Image](Videojuego_nivel.jpg)
+
+The screen features the elixir count, as well as the cards that are in your hand and the one that is in the field.A deck, and discard pile are present in the screen as well.
+
+#### 5. Deck
+The deck screen will be filled with the cards, from which you can pick 15-20 in order to compose your deck.This will be crucial, this is the part where the players will choose their strategy, weather they prefer a certain element, or a more balance deck, the choice is theirs.The scene where this selection will occur is the inventory, and we plan to make it look like this:
+
+![Local Image](DECK.png)
+
+The cards that the player has selected to compose the deck will have an outline glowing.
+
+#### 6. Credits
+
+The credits screen will have the pertinent information regarding the developers, class in which the idea was concieves, among other legal informatuon regarding the creative commons license.
 
 ### **Controls**
 
-How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
+During the whole interaction with our game, the player will only be able to use the cursor, this will be the main, and only selection device.The only exception will be when thew player inputs his username and password. 
+
+With the cursor, the player will be able to trigger certain events, like selecting the cards he wants to put into the battlefield, the level he wants to get into, the cards he wants to put in his deck, and even changing scenes will require the user to use the cursosr to click the button.
+
+The main reason why we did this is becasue in a Card Building Game, the only resource you really need to play and enjoy the game, is the cursor, with its capabilities of selecting something,basically covers everything needed.The idea of adding keybard keys would only casue confusion, and unnecessary frustation, which could lead to the user exiting our game and not playin ever again.
+
 
 ### **Mechanics**
 
-Elixir:
 
-Elixir is gained depending on the HP of the card played, where 100-80% gives 2 EP, 80-50% 3 EP and less than 50% gives 4 EP each turn.
+Throughout the gameplay, we have designed varios mechanics, each one quite interesting and functional, starting with the basics, the mechanic of putting cards into the battlefield:
 
-TBD- If you run out of elixir you can sacrifice any card to gain half of their elixir cost
+There will be two card categories: troops and complimentary cards (spells and artifacts, among others). At the begining of every match, five random cards will automatically be set in the player's hand. Each turn, both the player and his rival will be able to do one of three things: 
 
-Cards:
-There will be 3 types of troop cards and spell cards:
-The troop cards are divided into Fire, Plant and Water. Each having their special carateristics, Fire will have low elixir cost and high AP, however all of them will have equally low HP. Grass cards will have a low amount of AP however it will have a hig amount of damage. Water type cards on the other hand will be high elixir cost but having DP.
+1. Place a troop card in the battle field (each player can have only one card in the battlefield at any point in time).
+2. Use a complimentary card (for either offensive or defensive purposes).
+3. Attack the opponent's active troop with their own. 
+
+It is important to note that there will be certain mechanics related to the elements associated with each troop in the battlefield. There is a rock-paper-scissors power dynamic between the three elements in the game which can be explained as follows:
+
+Water is stronger than Fire
+
+Fire is stronger than Nature
+
+Nature is stronger than Water
+
+If a card is stronger than the card it's up against, the damage inflicted by one of its attacks will automatically be doubled. The opposite will happen if the card is weaker than its opponent.We attempt to achieve this by implementing certain functions that takes the two elements and modifies the attack accordingly. Complimentary cards can be used to either amplify damage exertion or reduce damage received. Players will have to bear both the elemental power dynamic and the tools at their disposal (complimentary cards) in mind to form effective strategies.
+
+In order to fuel their magical movements (the use of different cards and attacking with active cards), both players will require certain amounts of a magical energy that has not yet been named, though the preliminary term in use is "Elixir". Elixir is won each turn,in a regular basis,but, the elixir can also be won as a function of the health points of the troop card that is in play. This is to say, the more damage a troop has, the more Elixir they will gain to fuel subsequent attacks.Let's clarify this "mechanic" some more, if we (the player), have a card on the field, and that card has 80 base health points, but the enemy inflicts a certain amount of damage, our card now has a certain percentage of life depending on its health points, this, by default, triggering the event of duplicating the elixir won each round the card is in the battlefield.The percentage from which the duplicating elixir will trigger, is still to be determined later on.
 
 **Example cards:**
 
-Fire:
-Flambits- 10 HP 6 AP 2 EP
-Daemon- 16 HP 8 AP 3 EP
-Bombwhisk- 13 HP 9 AP 5 EP
-Horseman- 17 HP 3 DP 10 AP 6 EP
-Pack of Fire Tigers- 20 HP 8 AP 6 EP
-Dragon- 23 HP 14 AP 6 EP
+##### Fire:
 
-Grass:
-Corocs- 15 HP 5 AP 2 EP
-Wood Man- 24 HP 6 AP 4 EP
-Herb- 20 HP 8 AP 6 EP
-Toad Stool- 28 HP 8 AP 6 EP
-Grasshoppers- 34 HP 5 AP 7 EP
-Parapara- 30 HP 8 AP 7 EP
+Flambits- 10 HP 6 AP 2 EC
 
-Water:
-Drop- 13 HP 4 AP 3 EP
-Drowned- 15 HP 5 DP 6 AP 6 EP
-CrabTank- 10 HP 15 DP 6 AP 7 EP
-Puffer- 18 HP 3 DP 8 AP 7 EP
-Reef- 12 HP 18 DP 6 AP 8 EP
-Kraken- 18 HP 13 DP 8AP 9 EP
+Daemon- 16 HP 8 AP 3 EC
 
-Spells:
+Bombwhisk- 13 HP 9 AP 5 EC
 
-Defense up: Increces 5 DP to a card 3 EP
+Horseman- 17 HP  10 AP 6 EC
+
+Blazeclaw- 20 HP 8 AP 6 EC
+
+Dragon- 23 HP 14 AP 6 EC
+
+#### Grass:
+
+Corocs- 15 HP 5 AP 2 EC
+
+Wood Man- 24 HP 6 AP 4 EC
+
+Herb- 20 HP 8 AP 6 EC
+
+Toad Stool- 28 HP 8 AP 6 EC
+
+Grasshoppers- 34 HP 5 AP 7 EC
+
+Parapara- 30 HP 8 AP 7 EC
+
+#### Water:
+
+Drop- 13 HP, 4 AP, 3 EC
+
+Drowned- 15 HP,  6 AP, 6 EC
+
+CrabTank- 10 HP,  6 AP ,7 EC
+
+Puffer- 18 HP,  8 AP, 7 EC
+
+Reef- 12 HP,  6 AP, 8 EC
+
+Kraken- 18 HP, 8 AP, 9 EC
+
+Each card has 3 different values:
+
+##### HP: Health points
+
+##### AP: Attack points
+
+##### EC: Elixir cost
+
+#### Spells:
+
+Defense up: Increces 5 HP to a card 3 EP
+
 Health up: Increces 10 HP to a card 3 EP
+
 Snow Storm: Reduces 60% of AP in a turn 6 EP
+
 Quick Sand: Stuns a card for one turn 5 EP
+
 Root Beer: Increses AP to card 5 EP
+
 Neutral: Change a card's element to neutral 4 EP
 
-Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
+
 
 ## _Level Design_
 
@@ -296,36 +369,55 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
 
 ### **Graphics Needed**
 
-1. Characters
-    1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
-    2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
-2. Blocks
-    1. Dirt
-    2. Dirt/Grass
-    3. Stone Block
-    4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
-3. Ambient
-    1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
-4. Other
-    1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
+#### 1. Cards
+i. Troop
 
-_(example)_
+This cards will be the cards that fight the enemy's cards, this ones will be the ones appearing on the field, an example of what the cards will look like:
+
+![Local Image](Blazeclaw2.png)
+    
+The card features 4 circles in its coreners, each one containing crucial information, on the top left, the attack points circle is presetn, this tells us the attack points the card has. In the middle, we will see the element of the card, this will vary between 3 elements: Fire,Water,Nature. To the left, you can see the health points, as per the previews eplication, this tells us the "life", of our beast.On the bottom left, we can see the "Elixir" cost, thi is the amount of resource we will have to sacrifce in order to use this card in the battle.Lastly, on the bottom right, we can see the type of card, this card is a troop card, so, it will feature a dragon emblem.
+
+ii. Spells
+
+This cards will be the cards that potentiate your attack, or bolster your defense, depending on the spell card, an example of what it looks like:
+
+![Local Image](Dragon_armor.png)
+
+The card features 4 circles in its corners,each one containing crucial information, on the top left, we see a 0 in the attack points circle, this is because the card does not influence in any way the attack points of the troop card, next to it, the spell type circle is present, this circle indicates us if the card bolsters attack or defense, and on the right-most circle, the health points are augmented by +50, this means the troop card recieveing this spell card will gain +50 health points.In the bottom left, we can see the "Elixir" cost, thi is the amount of resource we will have to sacrifce in order to use this card in the battle.Lastly, on the bottom right, we can see the type of card, this card is a spell card, so, it will feature a pentagram emblem.
+
+#### 2. Unity UI
+
+The unity UI objects, are a part of utmost importance, this is because the interface with the user is what makes our game, a game, redundant, we know, but the idea is to make the user feel a smooth experience when using our game, and the UI bjects allow us to perform that  way.Throughout our proyect, we will use various elemnts, but the ones that present themselves the most among the experience of our game, are the following:
+
+i. Sprites
+
+When developing the game, the usage of sprites form unity will be crucial, sprites will be used to emulate certain things, one of those things, (this is still in consdieratiomn) will be the cards, we chose to use sprites thanks to thbe facility that the sprites give us when programming them and moving them when clicked.
+
+ii. Buttons
+
+ The buttons will be used in a virtuous amount, the usage of this UI elemnt simplifies some of the work, thanks to the quick-action this UI object gives us, just like executing function when clicked on them, this elemnts will be present throughout the game, from start to finish, from the first, to last scene.
+
+iii. Text(Text Mesh Pro)
+
+This UI object, is what gives our buttons sense, without text, our game is useless, the user wont even know whats going on, he will start to play without knowing the schematics of the game, leading to unpleasant game interaction. 
+        
+
+
+#### 3. Ambient
+
+1. Castle
+
+A background simulating the floor of a decaying castle will be shown, as if the castle is governed by a wizard which destroys and disrrupts everything around it
+
+2. Torch
+
+A single torch will be illuminating the battle scene, making it eerie and idle.
+
+3. Dark
+
+Apart from the torch, the battle scene shouldn't be very iluminated, the feeling of uneasiness should be strongly present.
+
 
 
 ## _Sounds/Music_
