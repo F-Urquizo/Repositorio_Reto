@@ -321,66 +321,73 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 ### **Abstract Classes / Components**
 
-1. BasePhysics
-    1. BasePlayer
-    2. BaseEnemy
-    3. BaseObject
-2. BaseObstacle
-3. BaseInteractable
 
-_(example)_
+1. GameManager Class:
+   - Attributes:
+     - CurrentLevel: Keeps track of the player's progress in the game.
+     - PlayerScore: Tracks the player's overall score or performance.
+     - IsGameOver: Indicates whether the game is over or still in progress.
+     - ElixirPool: Manages the global elixir resource available to both players.
+     - RewardManager: Handles rewards and card collection after defeating opponents.
 
-1. Class Player 
-   *  id
-   *  name
-   *  password
-   *  list of cards
+2. Card Class:
+   - Attributes:
+     - CardID: Unique identifier for each card.
+     - CardName: Name of the card.
+     - ElementType: Fire, Water, or Nature.
+     - AttackPower: The base attack power of the card.
+     - HealthPoints: Represents the card's health.
+     - SpecialAbility: Stores any unique abilities or special moves.
+     - CardPrefab: The Unity prefab associated with the card for visual representation.
 
+3. Deck Class:
+   - Attributes:
+     - DeckID: Unique identifier for each player's deck.
+     - CardsInDeck: A list or array containing the cards currently in the player's deck.
+     - MaxDeckSize: Maximum allowed size of the deck.
+     - DrawPile: A stack or queue representing the draw pile for the player.
+     - DiscardPile: A list representing the cards the player has used or discarded.
 
+4. Player Class:
+   - Attributes:
+     - PlayerID: Unique identifier for each player.
+     - CurrentHealth: Represents the player's health.
+     - CurrentElixir: Tracks the player's current elixir amount.
+     - ActiveTroop: The currently deployed troop card on the battlefield.
+     - Hand: A list representing the player's current hand of cards.
+     - DeckReference: Reference to the player's deck.
+     - IsPlayerTurn: Indicates whether it's currently the player's turn.
 
-2. Class Card
-   *  id
-   *  name
-   *  health
-   *  attack
-   *  cost
-   *  type
-   *  element
-   *  strength
-   *  weakness
+5. TroopManager Class:
+   - Attributes:
+     - TroopPrefab: The Unity prefab associated with troop cards for visual representation on the battlefield.
+     - BattleGrid: Manages the arrangement of troop cards on the battlefield.
+     - ApplyElementalAdvantage: Handles the rock-paper-scissors dynamic between elements during combat.
 
+6. UIManager Class:
+   - Attributes:
+     - ScorePanel: Displays the player's score.
+     - HealthBar: Visual representation of the player's health.
+     - ElixirBar: Displays the current elixir amount.
+     - TurnIndicator: Indicates whose turn it is.
+     - GameOverPanel: Displays game-over information and options.
 
+7. CombatManager Class:
+   - Attributes:
+     - AttackQueue: Manages the order of attacks during a turn.
+     - ResolveCombat: Handles the resolution of attacks, damage calculation, and card interactions.
+     - CheckWinConditions: Determines whether the player has won or lost the match.
 
-3. Class Deck 
-   *  list of cards
-   * size
+8. CardEffectManager Class:
+   - Attributes:
+     - ApplyCardEffects: Manages the application of spell or artifact effects during gameplay.
+     - BuffsAndDebuffs: Tracks active buffs or debuffs on cards.
 
 
 
 ### **Derived Classes / Component Compositions**
 
-1. BasePlayer
-    1. PlayerMain
-    2. PlayerUnlockable
-2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
-3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
-4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
-5. BaseInteractable
-    1. InteractableButton
-
-_(example)_
+As of this moment, we do not expect to require derived classes throughout the game development process. However, this is subject to change. For instance, we might need to create two separate classes for each type of card (spell and troop) to ensure their functionality. Meanwhile, we expect the type attribute of the Card class to be enough to address this situation.
 
 ## _Graphics_
 
@@ -462,28 +469,26 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
 ### **Sounds Needed**
 
 1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
+    1. Fire attack
+    2. Water attack
+    3. Nature attack
+    4. Healing spell
+    5. Damage spell
+
 2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
-    3. Happy chime (extra life)
-    4. Sad chime (died)
+    1. Card engagement
+    2. Card defeat
+    3. Life bar reduction
+    4. Life bar regeneration 
 
 _(example)_
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
+1. Adventurous level background music
+2. Loss music
+3. Win music
+4. Triumphant end credits track
 
 _(example)_
 
