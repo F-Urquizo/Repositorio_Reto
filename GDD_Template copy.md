@@ -499,32 +499,25 @@ _(example)_
 
 _(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
 
-1. develop base classes
+1. Develop MySQL Database (22 of March)
+    1. UML diagram
+    2. Dummy cases
+1. develop base classes (30 of March)
     1. base entity
         1. base player
-        2. base enemy
-        3. base block
+        2. base card
+        3. base deck
   2. base app state
-        1. game world
-        2. menu world
-2. develop player and basic block classes
-    1. physics / collisions
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
-    2. enemies
-        1. soldier
-        2. rat
-        3. etc.
-5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
-6. design sounds
-7. design music
-
-_(example)_
+        1. game menu
+        2. inventory
+        3. game scene
+2. develop player and basic block classes (7 of April)
+    1. combatManager
+    2. UIManager
+    3. playerManager
+3. develop other derived classes (13 of april)
+4. design levels
+    1. Enemy's IA
+    2. Enemy's deck
+    3. testing
+6. design sounds & music (17 of april)
