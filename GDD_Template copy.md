@@ -1,10 +1,10 @@
-# **Game Name Here**
+# **Grimore Guardians**
 
 ## _Game Design Document_
 
 ---
 
-##### **Copyright notice / author information / boring legal stuff nobody likes**
+##### **Copyright Authors: Francisco, Imanol, Salvador, Ricardo**
 
 ##
 ## _Index_
