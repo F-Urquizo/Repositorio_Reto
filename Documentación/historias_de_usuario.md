@@ -245,10 +245,10 @@
 
 13. Como usuario, quiero que mi videojuego sea divertido para disfrutar del tiempo que paso jugándolo.
 	Issues:
-		Playtest del juego
+		Revisión del *Gameflow*
 	Labels:
 		Videojuego
-		n/a
+		Front-end
 		Funcional 
 
 
