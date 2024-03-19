@@ -14,6 +14,16 @@ public class HomeScript : MonoBehaviour
 
     public void EnterGameScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
+
+    public void EnterDeckScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("InventoryScene");
+    }
+
+    public void EnterCreditScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CreditsScene");
     }
 }
