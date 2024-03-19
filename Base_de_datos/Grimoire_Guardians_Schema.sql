@@ -145,7 +145,7 @@ hand_id SMALLINT UNSIGNED NOT NULL,
 fight_id SMALLINT UNSIGNED NOT NULL,
 
 Duration SMALLINT UNSIGNED NOT NULL,
-Turn_status ENUM('skipped','completed'),
+Turn_status ENUM('player','NPC'),
 Date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
 PRIMARY KEY(turn_id),
