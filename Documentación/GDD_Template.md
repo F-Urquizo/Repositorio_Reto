@@ -212,6 +212,14 @@ In order to fuel their magical movements (the use of different cards and attacki
 
 **Example cards:**
 
+Each troop card has 3 different values:
+
+##### HP: Health points
+
+##### AP: Attack points
+
+##### EC: Elixir cost
+
 ##### Fire:
 
 Flambits- 10 HP 6 AP 2 EC
@@ -224,19 +232,19 @@ Horseman- 17 HP  10 AP 6 EC
 
 Blazeclaw- 20 HP 8 AP 6 EC
 
-Dragon- 23 HP 14 AP 6 EC
+Infernox- 23 HP 14 AP 6 EC
 
 #### Grass:
 
 Corocs- 15 HP 5 AP 2 EC
 
-Wood Man- 24 HP 6 AP 4 EC
+Thornstrike- 24 HP 6 AP 4 EC
 
 Herb- 20 HP 8 AP 6 EC
 
 Toad Stool- 28 HP 8 AP 6 EC
 
-Grasshoppers- 34 HP 5 AP 7 EC
+Verdant Blade- 34 HP 5 AP 7 EC
 
 Parapara- 30 HP 8 AP 7 EC
 
@@ -252,29 +260,31 @@ Puffer- 18 HP,  8 AP, 7 EC
 
 Reef- 12 HP,  6 AP, 8 EC
 
-Kraken- 18 HP, 8 AP, 9 EC
+Abyssurge- 18 HP, 8 AP, 9 EC
 
-Each card has 3 different values:
+Each spells can enhance 2 different values:
 
 ##### HP: Health points
 
 ##### AP: Attack points
 
+All the cards have a cost, expressed by:
+
 ##### EC: Elixir cost
 
 #### Spells:
 
-Defense up: Increces 5 HP to a card 3 EP
+Defense up: Increces 5 HP to a card 3 EC
 
-Health up: Increces 10 HP to a card 3 EP
+Health up: Increces 10 HP to a card 3 EC
 
-Snow Storm: Reduces 60% of AP in a turn 6 EP
+Snow Storm: Reduces 60% of AP in a turn 6 EC
 
-Quick Sand: Stuns a card for one turn 5 EP
+Quick Sand: Stuns a card for one turn 5 EC
 
-Root Beer: Increses AP to card 5 EP
+Root Beer: Increses AP to card 5 EC
 
-Neutral: Change a card's element to neutral 4 EP
+Neutral: Change a card's element to neutral 4 EC
 
 
 
