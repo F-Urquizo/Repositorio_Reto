@@ -27,9 +27,9 @@ HP TINYINT NOT NULL,
 AP TINYINT NOT NULL,
 Elixir_cost TINYINT UNSIGNED NOT NULL CHECK (Elixir_Cost > 0),
 Type ENUM("Spell","Troop"),
-Element ENUM("Water","Fire","Natue") NOT NULL,
-Strength ENUM("Water","Fire","Natue") NOT NULL,
-Weakness ENUM("Water","Fire","Natue") NOT NULL,
+Element ENUM("Water","Fire","Nature","") NOT NULL,
+Strength ENUM("Water","Fire","Nature","") NOT NULL,
+Weakness ENUM("Water","Fire","Nature","") NOT NULL,
 
 PRIMARY KEY(card_id)
 
